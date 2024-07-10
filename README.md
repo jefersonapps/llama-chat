@@ -1,6 +1,6 @@
 # Llama Chat
 
-Um aplicativo de desktop simples para interagir com modelos de linguagem grandes (LLMs) hospedados localmente usando a API Ollama.
+Um aplicativo de desktop simples para interagir com grandes modelos de linguagem (LLMs) hospedados localmente usando a API Ollama.
 
 <p align="center">
   <img src="./assets/llama-logo.png" alt="Ícone do app" width="150"/>
