@@ -10,13 +10,21 @@
   <body>
     <div class="container">
       <div id="chat-container"></div>
-      <form class="horizontal" onsubmit="sendPrompt(event)">
-        <input
+      <form onsubmit="sendPrompt(event)">
+        <!-- <input
+          autofocus
           type="text"
           name="prompt"
           id="prompt"
           placeholder="Faça uma pergunta..."
-        />
+        /> -->
+
+        <textarea
+          autofocus
+          name="prompt"
+          id="prompt"
+          placeholder="Faça uma pergunta..."
+        ></textarea>
         <button id="submit-btn" type="submit" title="Enviar">
           <img id="send-icon" src="./assets/send.svg" alt="Enviar" />
 
@@ -63,9 +71,12 @@
         event.preventDefault();
         stopGenerating = false;
         reloadChat.disabled = false;
+        promptInput.style.height = "50px";
+        chatContainer.style.height = "calc(100vh - 50px - 60px)";
 
         const formData = new FormData(event.currentTarget);
-        const prompt = formData.get("prompt");
+        const prompt = formData.get("prompt").trim();
+        console.log("prompt:", prompt);
 
         appendMessage("user", prompt);
 
@@ -110,7 +121,9 @@
         } else {
           const messageElement = document.createElement("div");
           messageElement.classList.add("message", role);
-          messageElement.textContent = content;
+          messageElement.innerHTML = content
+            .replace(/\n/g, "<br>")
+            .replace(/  /g, "&nbsp;&nbsp;");
           chatContainer.appendChild(messageElement);
           chatContainer.scrollTop = chatContainer.scrollHeight;
         }
@@ -146,6 +159,22 @@
         assistMessageContainer = null;
         stopGenerating = true;
       }
+
+      promptInput.addEventListener("keydown", function (event) {
+        if (event.shiftKey && event.key === "Enter") {
+          event.preventDefault();
+          document.querySelector("form").dispatchEvent(new Event("submit"));
+        }
+      });
+
+      promptInput.addEventListener("input", () => {
+        promptInput.style.height = "50px"; // Resetar a altura para calcular a altura correta
+        const inputHeight = Math.min(promptInput.scrollHeight, 300) + "px"; // Ajustar a altura, limitando a 300px
+        promptInput.style.height = inputHeight;
+        const padding = "60px";
+        const borders = "2px";
+        chatContainer.style.height = `calc(100vh - ${inputHeight} - ${padding} - ${borders})`;
+      });
     </script>
   </body>
 </html>

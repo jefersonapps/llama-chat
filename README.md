@@ -6,6 +6,12 @@ Um aplicativo de desktop simples para interagir com grandes modelos de linguagem
   <img src="./assets/llama-logo.png" alt="Ícone do app" width="150"/>
 </p>
 
+## Demonstração
+
+<p align="center">
+  <img src="./assets/demonstration.png" alt="Funcionamento do app" width="600"/>
+</p>
+
 ## Pré-requisitos
 
 - **Node.js e npm:** Certifique-se de ter o Node.js e o npm instalados em seu sistema.

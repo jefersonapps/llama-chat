@@ -17,8 +17,9 @@ body {
   color: var(--text-color);
 }
 
-.horizontal {
+form {
   display: flex;
+  align-items: flex-end;
   gap: 8px;
   width: 100%;
 }
@@ -46,20 +47,29 @@ body {
   border-radius: 8px;
 }
 
-input,
 button {
   padding: 10px;
   font-size: 16px;
   border: 1px solid var(--border-color);
   border-radius: 5px;
   min-width: 0;
+  height: fit-content;
 }
 
-input {
+textarea {
   background-color: var(--card-bg-color);
+  border-radius: 12px;
   color: var(--text-color);
   outline: none;
-  flex: 1 1 0%;
+  width: 100%;
+  height: 50px;
+  max-height: 300px;
+  overflow-y: auto;
+  resize: none;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 button {
@@ -74,11 +84,7 @@ button:hover {
 }
 
 button:disabled {
-  opacity: 50%;
-}
-
-button:disabled {
-  opacity: 50%;
+  opacity: var(--disabled-opacity);
   filter: none;
   cursor: not-allowed;
 }
@@ -88,12 +94,12 @@ button:disabled {
   padding: 8px 12px;
   border-radius: 8px;
   max-width: 80%;
-  word-break: break-word;
 }
 
 .user {
   background-color: var(--user-message-background);
   border: 1px solid var(--border-color);
+  width: fit-content;
 }
 
 .assist-message-container {
@@ -194,6 +200,7 @@ button:disabled {
     --assistant-message-background: #334155;
     --loader-color1: #ffffff;
     --loader-color2: #e6e6e6;
+    --disabled-opacity: 50%;
   }
 }
 
@@ -210,5 +217,6 @@ button:disabled {
     --assistant-message-background: #94a3b8;
     --loader-color1: #ffffff;
     --loader-color2: #007bff;
+    --disabled-opacity: 80%;
   }
 }
