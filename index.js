@@ -13,6 +13,7 @@ function createWindow() {
     minHeight: 300,
     minWidth: 400,
     autoHideMenuBar: true,
+    icon: path.join(__dirname, "./assets/llama-logo.png"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
