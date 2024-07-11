@@ -2,6 +2,8 @@
 
 Um aplicativo de desktop simples para interagir com grandes modelos de linguagem (LLMs) hospedados localmente usando a API Ollama.
 
+https://github.com/user-attachments/assets/76efc388-8359-4b5d-be50-6d8b90fa7d42
+
 <p align="center">
   <img src="./assets/llama-logo.png" alt="Ícone do app" width="150"/>
 </p>
