@@ -8,18 +8,18 @@ Um aplicativo de desktop simples para interagir com grandes modelos de linguagem
 
 ## Demonstração
 
-https://github.com/user-attachments/assets/76efc388-8359-4b5d-be50-6d8b90fa7d42
+https://github.com/user-attachments/assets/3bcabfa2-1053-4b45-a8f7-77f6fbde4ef4
 
 <p align="center">
   <img src="./assets/demonstration.png" alt="Funcionamento do app" width="600"/>
 </p>
 
-## Pré-requisitos
+## Pré-requisitos para desenvolvimento
 
 - **Node.js e npm:** Certifique-se de ter o Node.js e o npm instalados em seu sistema.
 - **Ollama:** Instale e configure o Ollama em sua máquina local. Consulte o repositório para obter mais informações: [https://github.com/ollama/ollama](https://github.com/ollama/ollama)
 
-## Instalação
+## Uso em desenvolvimento
 
 1. Clone este repositório:
 
@@ -39,7 +39,7 @@ https://github.com/user-attachments/assets/76efc388-8359-4b5d-be50-6d8b90fa7d42
    npm install
    ```
 
-## Uso
+## Iniciando ambiente de desenvolvimento
 
 1. Após configurar o Ollama em sua máquina local, siga as instruções do reposiório para rodar o modelo llama3:
 
@@ -68,6 +68,7 @@ https://github.com/user-attachments/assets/76efc388-8359-4b5d-be50-6d8b90fa7d42
 
 - O aplicativo assume que o servidor Ollama está em execução em `http://localhost:11434` (porta padrão). Se você configurou o Ollama em uma porta diferente, ajuste a URL no código-fonte do aplicativo.
 - O modelo de linguagem padrão usado é `llama3`. Você pode alterar isso no código-fonte do aplicativo para usar outros modelos disponíveis no Ollama.
+- A execução do modelo requer um alto uso de memória ram e processamento, se o modelo estiver demorando muito, considere liberar a memória ram do sistema.
 
 ## Contribuição
 
