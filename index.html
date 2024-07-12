@@ -76,7 +76,7 @@
 
         const formData = new FormData(event.currentTarget);
         const prompt = formData.get("prompt").trim();
-        console.log("prompt:", prompt);
+        if (!prompt) return;
 
         appendMessage("user", prompt);
 
@@ -149,16 +149,27 @@
         resetState();
       });
 
+      function validateSubmitButton() {
+        if (promptInput.value === "" || isLoading) {
+          document.getElementById("submit-btn").disabled = true;
+        } else {
+          document.getElementById("submit-btn").disabled = false;
+        }
+      }
       function resetState() {
         document.getElementById("loading").classList.add("hidden");
         isLoading = false;
         document.getElementById("send-icon").classList.remove("hidden");
-        document.querySelector("#submit-btn").disabled = false;
+        validateSubmitButton();
         document.querySelector("#cancel-request").disabled = true;
         assistantMessageElement = null;
         assistMessageContainer = null;
         stopGenerating = true;
       }
+
+      promptInput.addEventListener("keyup", () => {
+        validateSubmitButton();
+      });
 
       promptInput.addEventListener("keydown", function (event) {
         if (event.shiftKey && event.key === "Enter") {
