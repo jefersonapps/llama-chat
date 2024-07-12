@@ -14,6 +14,10 @@ https://github.com/user-attachments/assets/3bcabfa2-1053-4b45-a8f7-77f6fbde4ef4
   <img src="./assets/demonstration.png" alt="Funcionamento do app" width="600"/>
 </p>
 
+## Como rodar?
+
+Siga as instruções para a release do seu sistema: [Releases](https://github.com/jefersonapps/llama-chat/releases)
+
 ## Pré-requisitos para desenvolvimento
 
 - **Node.js e npm:** Certifique-se de ter o Node.js e o npm instalados em seu sistema.
