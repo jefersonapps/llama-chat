@@ -80,7 +80,7 @@ function appendMessage(role, content) {
 }
 
 function handleShiftEnter(event) {
-  if (event.shiftKey && event.key === "Enter") {
+  if (event.ctrlKey && event.key === "Enter") {
     event.preventDefault();
     document.querySelector("form").dispatchEvent(new Event("submit"));
   }

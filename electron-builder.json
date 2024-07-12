@@ -1,0 +1,29 @@
+{
+  "productName": "Llama Chat",
+  "appId": "com.jefersonapps.llama-chat",
+  "copyright": "Copyright © 2024 Jeferson Nunes",
+  "directories": {
+    "output": "build"
+  },
+  "win": {
+    "target": ["nsis"],
+    "icon": "icons/512x512.png"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowElevation": true,
+    "installerIcon": "icons/512x512.png",
+    "installerHeaderIcon": "icons/512x512.png",
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  },
+  "linux": {
+    "target": ["deb", "AppImage"],
+    "category": "Utility",
+    "icon": "icons"
+  },
+  "mac": {
+    "target": ["dmg", "zip"],
+    "icon": "icons/512x512.png"
+  }
+}
