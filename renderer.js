@@ -24,12 +24,12 @@ function sendPrompt(event) {
   event.preventDefault();
   stopGenerating = false;
   reloadChat.disabled = false;
-  promptInput.style.height = "50px";
+  promptInput.style.height = "48px";
   chatContainer.style.height = "calc(100vh - 50px - 60px)";
 
   const formData = new FormData(event.currentTarget);
   const prompt = formData.get("prompt").trim();
-  if (!prompt) return;
+  if (!prompt || isLoading) return;
 
   appendMessage("user", prompt);
 
