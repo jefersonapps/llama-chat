@@ -137,7 +137,7 @@ textarea {
 
 /* Loader Styles */
 .loader {
-  --loader-size: 20px;
+  --loader-size: 24px;
   width: var(--loader-size);
   height: var(--loader-size);
   border-radius: 50%;
